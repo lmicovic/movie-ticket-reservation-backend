@@ -81,7 +81,7 @@ public class MovieService implements CRUDService<MovieDTO> {
 		File imageFile = new File(imagePath);
 		// If Image File does not Exist
 		if(imageFile.exists() == false) {
-			throw new Exception("Image file" + imageFile.getPath() + " for movie with id: " + id + " is not found." );
+			throw new Exception("Image file: " + imageFile.getPath() + " for movie with id: " + id + " is not found." );
 		}
 		
 		// If Image File Exist
