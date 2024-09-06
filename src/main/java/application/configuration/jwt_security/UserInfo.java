@@ -34,22 +34,26 @@ public class UserInfo {
 
 	@Column(name = "roles")
 	private String roles;		// Example: "ROLE_USER,ROLE_ADMIN"
-
+	
+	@Column(name = "active")
+	private Boolean active;
+	
 	public UserInfo() {
 
 	}
 
-	public UserInfo(String firstname, String lastname, String email, String password, String roles) {
+	public UserInfo(String firstname, String lastname, String email, String password, String roles, Boolean active) {
 		
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.email = email;
 		this.password = password;
 		this.roles = roles;
+		this.active = active;
 		
 	}
 
-	public UserInfo(Long id, String firstname, String lastname, String email, String password, String roles) {
+	public UserInfo(Long id, String firstname, String lastname, String email, String password, String roles, Boolean active) {
 
 		this.id = id;
 		this.firstname = firstname;
@@ -57,6 +61,7 @@ public class UserInfo {
 		this.email = email;
 		this.password = password;
 		this.roles = roles;
+		this.active = active;
 		
 	}
 
@@ -108,9 +113,17 @@ public class UserInfo {
 		this.roles = roles;
 	}
 
+	public Boolean getActive() {
+		return active;
+	}
+
+	public void setActive(Boolean active) {
+		this.active = active;
+	}
+
 	@Override
 	public String toString() {
-		return "UserInfo [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email + ", password=" + password + ", roles=" + roles + "]";
+		return "UserInfo [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email + ", password=" + password + ", roles=" + roles + "]" + ", active=" + this.active + "]";
 	}
 
 }

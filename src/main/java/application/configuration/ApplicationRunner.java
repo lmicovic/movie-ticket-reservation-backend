@@ -63,9 +63,9 @@ public class ApplicationRunner implements CommandLineRunner {
 		File userImageFolder = new File("./src/main/resources/images/users");
 		
 		// Create new Users
-		UserInfo userInfo1 = new UserInfo("Pera", "Peric", "peraperic@gmail.com", "Test!123!", "ROLE_USER");
-		UserInfo userInfo2 = new UserInfo("Pera", "Anic", "peraanic@gmail.com", "Test!123!", "ROLE_USER");
-		UserInfo userInfo3 = new UserInfo("Ana", "Peric", "anaperic@gmail.com", "Test!123!", "ROLE_USER");
+		UserInfo userInfo1 = new UserInfo("Pera", "Peric", "peraperic@gmail.com", "Test!123!", "ROLE_USER", true);
+		UserInfo userInfo2 = new UserInfo("Pera", "Anic", "peraanic@gmail.com", "Test!123!", "ROLE_USER", true);
+		UserInfo userInfo3 = new UserInfo("Ana", "Peric", "anaperic@gmail.com", "Test!123!", "ROLE_USER", true);
 		
 		try {
 			userInfo1 = this.userInfoService.addUser(userInfo1);

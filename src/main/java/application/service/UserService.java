@@ -32,11 +32,29 @@ public class UserService implements CRUDService<UserDTO> {
 
 	public List<UserDTO> getAll() {
 		
-		List<UserDTO> users = this.userRepository.findAll();
+		// Gets All users - Active and Inactive users
+//		List<UserDTO> users = this.userRepository.findAll();
+		
+		// Get only Active users
+		List<UserDTO> users = this.userRepository.findByUserInfo_Active(true);
 		
 		return users;
 	}
 
+	public List<UserDTO> getAllActiveUsers() {
+		
+		List<UserDTO> users = this.userRepository.findByUserInfo_Active(true);
+		
+		return users;
+	}
+	
+	public List<UserDTO> getAllInactiveUsers() {
+		
+		List<UserDTO> users = this.userRepository.findByUserInfo_Active(false);
+		
+		return users;
+	}
+	
 	public UserDTO getById(Long id) {
 
 		Optional<UserDTO> userOption = this.userRepository.findById(id);
